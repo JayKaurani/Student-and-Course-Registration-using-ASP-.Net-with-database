@@ -1,0 +1,72 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Database_Master.master.cs" Inherits="Database_Master.Database_Master" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Charusat</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+        .background{
+            background-color:skyblue;
+            color:dimgray;
+        }
+        a{
+            color:darkblue;
+        }
+        .search{
+            background-color:lightcyan;
+            color:dimgray;
+        }
+        .imgheightwidth{
+            max-width:80%;
+            max-height:80%;
+        }
+    </style>
+    <link href="Bootstrap/bootstrap/css/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="w-auto fs-6 pe-5 background">
+            <div class="row">
+                <div class="col-sm-12">
+                    <ul class="nav nav-pills justify-content-end">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Logout</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <asp:Label ID="lblUserName" Text="Siddh" runat="server" />
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="m-sm-4 h-50">
+            <asp:Image runat="server" ImageUrl="~/Image/charusat.png" CssClass="mw-100" AlternateText="Charusat-Logo" ID="imgTitle" />
+        </div>
+        <div class="container-fluid m-sm-1">
+            <div class="row">
+                <div class="col-sm-2 bg-info-subtle spinner-border-sm border-1 rounded rounded-1 border-success-subtle h-25">
+                    <ul class="nav flex-sm-column">
+                        <li class="nav-item">
+                            <asp:HyperLink CssClass="nav-link active" NavigateUrl="~/frmFormView.aspx" Text="Course" runat="server" />
+                        </li>
+                        <li class="nav-item">
+                            <asp:HyperLink CssClass="nav-link" NavigateUrl="~/frmSubject.aspx" Text="Subject" runat="server" />
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-9 bg-gradient ms-sm-2">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+        </div>  
+    </form>
+    <script src="jQuery/jquery/jquery.js"></script>
+    <script src="Bootstrap/bootstrap/js/bootstrap.js"></script>
+</body>
+</html>
